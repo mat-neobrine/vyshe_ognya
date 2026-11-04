@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#102b32"><title>Выше огня — 3D-приключение</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<canvas id="world" aria-label="Трёхмерная игра с платформами"></canvas>
+<div class="vignette"></div>
+<header><a class="brand" href="./index.html"><span class="brand-icon">↟</span><span>ВЫШЕ ОГНЯ<small>МАЛЕНЬКИЙ ГЕРОЙ. БОЛЬШАЯ МИССИЯ.</small></span></a><div class="top-right"><span class="live-dot"></span><span id="stage">ЭКСПЕДИЦИЯ 01</span><button id="pause" title="Пауза (Esc)" aria-label="Пауза">Ⅱ</button></div></header>
+<aside class="inventory"><div class="eyebrow">ТВОЯ МИССИЯ</div><h2>Собери. Поднимись.<br>Спаси.</h2><p class="mission-copy">Пять деталей на пути к вершине.<br>Один дом, который ждёт помощи.</p><div class="inventory-title"><span>ОГНЕТУШИТЕЛЬ</span><b id="count">0 / 5</b></div><div id="parts"></div><div class="portal-status"><i id="portal-light"></i><span id="portal-state">Портал ждёт все детали</span></div></aside>
+<div class="altimeter"><div class="eyebrow">ВЫСОТА</div><strong><span id="height">0</span><small>м</small></strong><div class="alt-track"><div id="alt-fill"></div><span>↟</span></div><span class="summit-label">ВЕРШИНА · 40 М</span></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<nav id="camera-controls" aria-label="Управление камерой"><span>КАМЕРА · Q / E · ПЕРЕТАЩИ ЭКРАН</span><div><button id="camera-left" title="Повернуть камеру влево (Q)" aria-label="Повернуть камеру влево">↶</button><button id="camera-reset" title="Вернуть исходный вид (C)" aria-label="Вернуть исходный вид">◎</button><button id="camera-right" title="Повернуть камеру вправо (E при подъёме)" aria-label="Повернуть камеру вправо">↷</button></div></nav>
+<footer><div class="controls"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> движение</span><span><kbd>ПРОБЕЛ</kbd> прыжок</span><span><kbd>R</kbd> к последней детали</span></div><span class="footer-note">ТОЛЬКО ВВЕРХ. ИНОГДА — ОБРАТНО ЗА ДЕТАЛЬЮ.</span><button id="sound" aria-label="Включить звук">Звук: выкл.</button></footer>
+<div id="touch"><div class="dpad"><button data-key="KeyW">↑</button><button data-key="KeyA">←</button><button data-key="KeyS">↓</button><button data-key="KeyD">→</button></div><button class="jump" data-key="Space">ПРЫЖОК</button></div>
+<button id="extinguish">УДЕРЖИВАЙ E · ТУШИТЬ</button><div id="fire-progress"><span>ПОТУШИ ПОЖАР</span><div><i id="fire-fill"></i></div></div>
+<div class="overlay" id="intro"><div class="intro-content"><div class="chapter"><span></span> ПРИКЛЮЧЕНИЕ НА ВЫСОТЕ</div><h1>Выше<br><em>огня.</em></h1><p>Большой путь начинается с одного прыжка.<br>Собери огнетушитель, открой портал<br>и стань тем, кто спасёт дом.</p><button class="primary" id="start">Начать восхождение <span>↗</span></button><div class="intro-hint">3D-ПЛАТФОРМЕР <i>·</i> 5 ДЕТАЛЕЙ <i>·</i> 1 МИССИЯ</div></div><div class="intro-badge"><span>↑</span><div>40 метров<small>до большого поступка</small></div></div></div>
+<div class="overlay hidden" id="pause-screen"><div class="dialog"><div class="eyebrow">ПЕРЕДЫШКА</div><h2>Небо подождёт.</h2><p>Продолжи путь, когда будешь готов.</p><button class="primary" id="resume">Продолжить ↗</button><button class="secondary" id="restart">Начать заново</button></div></div>
+<div class="overlay hidden" id="win"><div class="dialog"><div class="win-icon">✓</div><div class="eyebrow">МИССИЯ ВЫПОЛНЕНА</div><h2>Огонь погас.<br>Герой — это ты.</h2><p>Все детали собраны. Дом спасён.<br>Спасибо за каждый прыжок.</p><div id="stats"></div><button class="primary" id="again">Ещё одно приключение ↗</button></div></div>
+<div id="error" class="hidden">Для игры нужен браузер с поддержкой WebGL. Откройте index.html в Chrome или Edge с включённым аппаратным ускорением.</div>
+<script src="core.js"></script><script src="game.js"></script>
+</body></html>
